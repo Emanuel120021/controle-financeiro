@@ -1,0 +1,86 @@
+.div-principal-login {
+  background: rgb(156, 150, 150);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .card-principal-registro {
+    width: 30%;
+    height: 90%;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 8px;
+    .logo {
+      height: 50%;
+      margin-bottom: -80px;
+      margin-top: -70px;
+    }
+    .input-login {
+      width: 80%;
+      height: 8%;
+    }
+    .botoes-acoes {
+      width: 100%;
+      justify-content: space-evenly;
+      display: flex;
+    }
+    .bot-card {
+      width: 100%;
+      display: flex;
+      justify-content: end;
+      button {
+        margin-right: 20px;
+        background-color: transparent;
+        border: none;
+        color: blue;
+        cursor: pointer;
+      }
+    }
+  }
+  .card-principal {
+    width: 30%;
+    height: 70%;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 8px;
+    .logo {
+      height: 60%;
+      margin-bottom: -80px;
+      margin-top: -50px;
+    }
+    .input-login {
+      width: 80%;
+      height: 10%;
+    }
+    .bot-card {
+      width: 100%;
+      display: flex;
+      justify-content: end;
+      button {
+        margin-right: 20px;
+        background-color: transparent;
+        border: none;
+        color: blue;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .div-principal-login {
+    overflow: hidden;
+    height: 90vh;
+    .card-principal,
+    .card-principal-registro {
+      width: 90% !important;
+      transform: scale(0.9);
+    }
+  }
+}

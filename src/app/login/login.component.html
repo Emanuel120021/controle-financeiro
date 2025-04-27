@@ -1,0 +1,63 @@
+<p-toast />
+<div class="div-principal-login">
+  <div [class]="this.isRegister ? 'card-principal-registro' : 'card-principal'">
+    <img class="logo" src="/assets/logo.png" alt="" />
+    <p-inputgroup class="input-login">
+      <p-inputgroup-addon>
+        <i class="pi pi-user"></i>
+      </p-inputgroup-addon>
+      <p-floatlabel>
+        <input pInputText id="email" [(ngModel)]="email" />
+        <label for="email">E-mail</label>
+      </p-floatlabel>
+    </p-inputgroup>
+
+    <p-inputgroup class="input-login" *ngIf="isRegister">
+      <p-inputgroup-addon>
+        <i class="pi pi-lock"></i>
+      </p-inputgroup-addon>
+      <p-floatlabel>
+        <input pInputText id="nome" [(ngModel)]="nome" />
+        <label for="nome">Como te chamamos?</label>
+      </p-floatlabel>
+    </p-inputgroup>
+
+    <p-inputgroup class="input-login">
+      <p-inputgroup-addon>
+        <i class="pi pi-lock"></i>
+      </p-inputgroup-addon>
+      <p-floatlabel>
+        <input pInputText id="senha" [(ngModel)]="senha" />
+        <label for="senha">Senha</label>
+      </p-floatlabel>
+    </p-inputgroup>
+
+    <p-inputgroup class="input-login" *ngIf="isRegister">
+      <p-inputgroup-addon>
+        <i class="pi pi-lock"></i>
+      </p-inputgroup-addon>
+      <p-floatlabel>
+        <input pInputText id="repitaSenha" [(ngModel)]="repitaSenha" />
+        <label for="repitaSenha">Repita a senha</label>
+      </p-floatlabel>
+    </p-inputgroup>
+
+    <div class="botoes-acoes">
+      <p-button
+        label="Cancelar"
+        icon="pi pi-times"
+        severity="danger"
+        (onClick)="toggleIsRegister()"
+        *ngIf="this.isRegister"
+      />
+      <p-button
+        [label]="this.isRegister ? 'Registrar' : 'Entrar'"
+        icon="pi pi-check"
+        (onClick)="entrarRegistrar()"
+      />
+    </div>
+    <div class="bot-card" (click)="toggleIsRegister()" *ngIf="!this.isRegister">
+      <button class="registrar">Ainda não rem conta? Registre-se aqui</button>
+    </div>
+  </div>
+</div>

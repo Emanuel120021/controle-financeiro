@@ -1,0 +1,24 @@
+<div class="div-principal-dashboard">
+  <app-header></app-header>
+  <div class="cards-graficos">
+    <section class="grafico-1">
+      <div class="card">
+        <p-chart
+          type="bar"
+          [data]="dataGraficoUm"
+          [options]="optionGraficoUm"
+        />
+      </div>
+    </section>
+    <section class="grafico-2">
+      <!-- <p-chart
+        type="polarArea"
+        [data]="data"
+        [options]="options"
+        height="400"
+      /> -->
+    </section>
+    <section class="grafico-3">Gráfico 3</section>
+    <section class="grafico-4">Gráfico 4</section>
+  </div>
+</div>

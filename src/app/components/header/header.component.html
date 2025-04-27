@@ -1,0 +1,15 @@
+<button class="btn-toggle-sidebar" (click)="toggleSidebar()">
+  <i class="pi pi-bars"></i>
+</button>
+<div class="div-principal" [class.sidebar-fechada]="!sidebarAberta">
+  <section class="esquerda">LOGO</section>
+  <section class="centro">
+    <a href="/dashboard"><i class="pi pi-home"></i>Início</a>
+    <a href=""><i class="pi pi-objects-column"></i>Tipos de despesas</a>
+    <a href=""><i class="pi pi-objects-column"></i>Gerenciar despesas</a>
+    <a href=""><i class="pi pi-objects-column"></i>Controle</a>
+  </section>
+  <section class="direita">
+    <button (click)="logout()"><i class="pi pi-sign-out"></i> Sair</button>
+  </section>
+</div>

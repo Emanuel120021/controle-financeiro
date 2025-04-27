@@ -1,0 +1,42 @@
+.div-principal-dashboard {
+  height: 100vh;
+  .cards-graficos {
+    display: flex;
+    flex-wrap: wrap;
+    height: 94%;
+    gap: 100px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+
+    section {
+      width: 30%;
+      height: 35%;
+    }
+    .grafico-1 {
+      /* offset-x | offset-y | blur-radius | spread-radius | color */
+      box-shadow: 5px 5px 8px 1px rgba(0, 0, 0, 0.2);
+    }
+    .grafico-2 {
+      background-color: green;
+    }
+    .grafico-3 {
+      background-color: blue;
+    }
+    .grafico-4 {
+      background-color: yellow;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .div-principal-dashboard {
+    margin-top: 70px;
+    .cards-graficos {
+      section {
+        width: 90%;
+        height: 30%;
+      }
+    }
+  }
+}

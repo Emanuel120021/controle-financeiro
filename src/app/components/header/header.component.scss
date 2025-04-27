@@ -1,0 +1,114 @@
+.div-principal {
+  width: 100%;
+  background-color: rgb(230, 195, 0);
+  height: 6%;
+  display: flex;
+  justify-content: space-around;
+  .centro {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    a {
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      font-size: 23px;
+      gap: 5px;
+      color: white;
+      font-weight: 900;
+    }
+  }
+  .direita {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    button {
+      background-color: transparent;
+      border-radius: 8px;
+      border: 1px solid white;
+      color: white;
+      padding: 6px;
+      cursor: pointer;
+    }
+  }
+  .centro {
+    width: 60%;
+  }
+}
+
+//Configurações do sidebar
+@media (max-width: 768px) {
+  .div-principal {
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100vh;
+    width: 220px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    padding: 1.5rem 1rem;
+    gap: 2rem;
+
+    section {
+      width: 100%;
+    }
+
+    .esquerda {
+      font-size: 1.5rem;
+      font-weight: bold;
+      display: flex;
+      justify-content: end;
+    }
+
+    .centro {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+
+      a {
+        font-size: 20px;
+      }
+    }
+
+    .direita {
+      margin-top: auto;
+      width: 100%;
+      justify-content: flex-start;
+
+      button {
+        width: 100%;
+        text-align: left;
+      }
+    }
+  }
+}
+
+.btn-toggle-sidebar {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 1100;
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  color: black;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .div-principal {
+    transition: transform 0.3s ease;
+    transform: translateX(0);
+  }
+
+  .div-principal.sidebar-fechada {
+    transform: translateX(-100%);
+  }
+}
+
+@media (min-width: 769px) {
+  .btn-toggle-sidebar {
+    display: none;
+  }
+}
