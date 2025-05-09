@@ -9,7 +9,13 @@ import {
 } from '@angular/core';
 import { HeaderComponent } from '../components/header/header.component';
 import { Usuario } from '../../interfaces/usuario';
-import { Firestore, doc, docData } from '@angular/fire/firestore';
+import {
+  Firestore,
+  addDoc,
+  collection,
+  doc,
+  docData,
+} from '@angular/fire/firestore';
 import { Auth, onAuthStateChanged, User } from '@angular/fire/auth';
 import { ChartModule } from 'primeng/chart';
 import { isPlatformBrowser } from '@angular/common';

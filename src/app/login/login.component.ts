@@ -10,7 +10,13 @@ import { CommonModule } from '@angular/common';
 import { MessageService } from 'primeng/api';
 import { Toast } from 'primeng/toast';
 import { Router } from '@angular/router';
-import { Firestore, doc, setDoc } from '@angular/fire/firestore';
+import {
+  Firestore,
+  addDoc,
+  collection,
+  doc,
+  setDoc,
+} from '@angular/fire/firestore';
 import { onAuthStateChanged } from 'firebase/auth';
 
 @Component({

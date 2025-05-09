@@ -1,0 +1,19 @@
+.div-principal-receitas {
+  height: 100vh;
+  .cards-despesas {
+    gap: 40px;
+    display: flex;
+    background-color: blue;
+    justify-content: center;
+    flex-wrap: wrap;
+    height: 100%;
+    align-items: center;
+  }
+  .cards-mobile {
+    background-color: red;
+    flex-wrap: wrap;
+    height: 20%;
+    width: 40%;
+    min-width: 300px;
+  }
+}

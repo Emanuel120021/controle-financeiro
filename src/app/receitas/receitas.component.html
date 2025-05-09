@@ -1,0 +1,36 @@
+<div class="div-principal-receitas">
+  <app-header></app-header>
+
+  <div class="table-despesas" *ngIf="!isMobile">
+    <p-table [value]="dadosMock">
+      <ng-template #header>
+        <tr>
+          <th>Nome</th>
+          <th>Valor</th>
+          <th>Categoria</th>
+          <th>Data Cadastro</th>
+          <th>Ações</th>
+        </tr>
+      </ng-template>
+      <ng-template #body let-product>
+        <tr>
+          <td>{{ product.nome }}</td>
+          <td>{{ product.valor }}</td>
+          <td>{{ product.tipo }}</td>
+          <td>{{ product.dataCad }}</td>
+          <td><i class="pi pi-file-edit"></i></td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+
+  <div class="cards-despesas" *ngIf="isMobile">
+    @for(despesa of dadosMock; track despesa.nome){
+    <section class="cards-mobile">
+      <span>{{ despesa.nome }}</span>
+      <td><i class="pi pi-file-edit"></i></td>
+      <span></span>
+    </section>
+    }
+  </div>
+</div>
