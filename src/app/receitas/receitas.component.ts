@@ -3,10 +3,26 @@ import { HeaderComponent } from '../components/header/header.component';
 import { CommonModule } from '@angular/common';
 import { TableModule } from 'primeng/table';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { ButtonModule } from 'primeng/button';
+import { InputTextModule } from 'primeng/inputtext';
+import { Dialog } from 'primeng/dialog';
+import { ColorPickerModule } from 'primeng/colorpicker';
+import { FormsModule } from '@angular/forms';
+import { FloatLabel } from 'primeng/floatlabel';
 
 @Component({
   selector: 'app-receitas',
-  imports: [HeaderComponent, TableModule, CommonModule],
+  imports: [
+    HeaderComponent,
+    TableModule,
+    CommonModule,
+    ButtonModule,
+    InputTextModule,
+    Dialog,
+    ColorPickerModule,
+    FormsModule,
+    FloatLabel,
+  ],
   standalone: true,
   templateUrl: './receitas.component.html',
   styleUrl: './receitas.component.scss',
@@ -24,7 +40,13 @@ export class ReceitasComponent {
     },
   ];
 
+  visible: boolean = false;
+
   isMobile = false;
+
+  color: any;
+
+  tipo_despesa: any;
 
   constructor(private breakpointObserver: BreakpointObserver) {
     this.breakpointObserver
@@ -32,5 +54,9 @@ export class ReceitasComponent {
       .subscribe((result) => {
         this.isMobile = result.matches;
       });
+  }
+
+  showDialog() {
+    this.visible = true;
   }
 }

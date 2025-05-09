@@ -1,5 +1,46 @@
+<p-dialog [(visible)]="visible" [modal]="true" [style]="{ height: '42%' }">
+  <ng-template #header>
+    <div class="inline-flex items-center justify-center gap-2">
+      <span class="font-bold whitespace-nowrap">Adicionar categoria</span>
+    </div>
+  </ng-template>
+  <div class="conteudo_modal">
+    <p-floatlabel variant="on">
+      <input
+        pInputText
+        id="tipo"
+        [(ngModel)]="tipo_despesa"
+        autocomplete="off"
+      />
+      <label for="tipo">Tipo</label>
+    </p-floatlabel>
+
+    <span class="color_pick">
+      <label for="email" class="font-semibold w-24">Cor</label>
+      <p-colorpicker [(ngModel)]="color" appendTo="body" />
+    </span>
+  </div>
+  <ng-template #footer>
+    <p-button
+      label="Cancelar"
+      [text]="true"
+      severity="secondary"
+      (click)="visible = false"
+    />
+    <p-button
+      label="Adicionar"
+      [outlined]="true"
+      severity="secondary"
+      (click)="visible = false"
+    />
+  </ng-template>
+</p-dialog>
 <div class="div-principal-receitas">
   <app-header></app-header>
+
+  <div class="categoria">
+    <p-button (click)="showDialog()" label="Show" />
+  </div>
 
   <div class="table-despesas" *ngIf="!isMobile">
     <p-table [value]="dadosMock">
